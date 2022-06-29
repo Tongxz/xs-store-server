@@ -22,8 +22,6 @@ jobs:
         password: "${{ secrets. DOCKER_PASSWORD }}"
         region-id: cn-shanghai
     - name: Build and push image
-      env:
-        IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:$IMAGE_TAG .
-        docker push registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:$IMAGE_TAG
+        docker build -t registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest .
+        docker push registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest
