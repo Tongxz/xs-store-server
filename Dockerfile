@@ -21,4 +21,4 @@ COPY --from=0 /go/src/github.com/Tongxz/xs-store-server/resource ./resource/
 COPY --from=0 /go/src/github.com/Tongxz/xs-store-server/config.docker.yaml ./
 
 EXPOSE 8888
-ENTRYPOINT ./server -c config.docker.yaml
+ENTRYPOINT ./xs-server -c config.docker.yaml
