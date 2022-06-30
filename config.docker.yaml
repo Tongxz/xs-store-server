@@ -137,12 +137,12 @@ qiniu:
 
 # aliyun oss configuration
 aliyun-oss:
-  endpoint: 'yourEndpoint'
-  access-key-id: 'yourAccessKeyId'
-  access-key-secret: 'yourAccessKeySecret'
-  bucket-name: 'yourBucketName'
-  bucket-url: 'yourBucketUrl'
-  base-path: 'yourBasePath'
+  endpoint: oss-cn-shanghai.aliyuncs.com
+  access-key-id: LTAI5tL4KFrCXwa2KJM6Ky1s
+  access-key-secret: A6tsxSIYN2PO7C4kGKyfgaYKNkvVCq
+  bucket-name: xs-qingshi
+  bucket-url: https://xs-qingshi.oss-cn-shanghai.aliyuncs.com
+  base-path: oss://xs-qingshi/
 
 # tencent cos configuration
 tencent-cos:

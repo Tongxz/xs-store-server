@@ -32,7 +32,7 @@ jobs:
           file: ./Dockerfile
           push: true
           # 这里是给docker 打标签，默认不上传 latest 版本，如果你需要上传 latest 版本，请把 latest: true 改成
-          latest: false
+          latest: true
 #  build:
 #
 #    runs-on: ubuntu-latest
