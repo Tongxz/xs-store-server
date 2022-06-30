@@ -1,10 +1,10 @@
 aliyun-oss:
-  endpoint: yourEndpoint
-  access-key-id: yourAccessKeyId
-  access-key-secret: yourAccessKeySecret
-  bucket-name: yourBucketName
-  bucket-url: yourBucketUrl
-  base-path: yourBasePath
+  endpoint: 'yourEndpoint'
+  access-key-id: 'yourAccessKeyId'
+  access-key-secret: 'yourAccessKeySecret'
+  bucket-name: 'yourBucketName'
+  bucket-url: 'yourBucketUrl'
+  base-path: 'yourBasePath'
 autocode:
   transfer-restart: true
   root: /Users/txz/Code/go/xs-store-admin
@@ -126,7 +126,7 @@ system:
   env: public
   addr: 8888
   db-type: mysql
-  oss-type: local
+  oss-type: aliyun-oss
   use-multipoint: false
   use-redis: false
   iplimit-count: 15000
