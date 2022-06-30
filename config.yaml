@@ -126,7 +126,7 @@ system:
   env: public
   addr: 8888
   db-type: mysql
-  oss-type: aliyun-oss
+  oss-type: local
   use-multipoint: false
   use-redis: false
   iplimit-count: 15000
