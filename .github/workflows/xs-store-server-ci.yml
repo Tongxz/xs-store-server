@@ -7,21 +7,46 @@ on:
     branches: [ "master" ]
 
 jobs:
-
-  build:
-
+  GIN_VUE_ADMIN_SERVER:
+    name: GIN VUE ADMIN SERVER
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Login to ACR
-      uses: aliyun/acr-login@v1
-      with:
-        login-server: https://registry.cn-shanghai.aliyuncs.com
-        username: "${{ secrets. DOCKER_USERNAME }}"
-        password: "${{ secrets. DOCKER_PASSWORD }}"
-        region-id: cn-shanghai
-    - name: Build and push image
-      run: |
-        docker build -t registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest .
-        docker push registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest
+      - name: Private Actions Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Docker Setup QEMU
+        uses: docker/setup-qemu-action@v1.2.0
+      - name: Docker Setup Buildx
+        uses: docker/setup-buildx-action@v1.6.0
+      - name: Docker Login in Aliyun
+        uses: docker/login-action@v1.10.0
+        with:
+          registry: https://registry.cn-shanghai.aliyuncs.com
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.7.0
+        with:
+          context: .
+          # 这里是适配 arm64 ，主要看你们的程序是否支持 arm64
+          platforms: linux/amd64,linux/arm64
+          file: ./Dockerfile
+          push: true
+          # 这里是给docker 打标签，默认不上传 latest 版本，如果你需要上传 latest 版本，请把 latest: true 改成
+          latest: false
+#  build:
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - uses: actions/checkout@v3
+#    - name: Login to ACR
+#      uses: aliyun/acr-login@v1
+#      with:
+#        login-server: https://registry.cn-shanghai.aliyuncs.com
+#        username: "${{ secrets. DOCKER_USERNAME }}"
+#        password: "${{ secrets. DOCKER_PASSWORD }}"
+#        region-id: cn-shanghai
+#    - name: Build and push image
+#      run: |
+#        docker build -t registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest .
+#        docker push registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest
