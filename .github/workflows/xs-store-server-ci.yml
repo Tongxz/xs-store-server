@@ -13,15 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Login to ACR
-      uses: aliyun/acr-login@v1
-      with:
-        login-server: https://registry.cn-shanghai.aliyuncs.com
-        username: "${{ secrets. DOCKER_USERNAME }}"
-        password: "${{ secrets. DOCKER_PASSWORD }}"
-        region-id: cn-shanghai
-    - name: Build and push image
-      run: |
-        docker build -t registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest .
-        docker push registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:latest
+      - uses: actions/checkout@v3
+      - name: Login to ACR
+        uses: aliyun/acr-login@v1
+        with:
+          login-server: https://registry.cn-shanghai.aliyuncs.com
+          username: "${{ secrets. DOCKER_USERNAME }}"
+          password: "${{ secrets. DOCKER_PASSWORD }}"
+          region-id: cn-shanghai
+      - name: Build and push image
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:$IMAGE_TAG .
+          docker push registry.cn-shanghai.aliyuncs.com/store_admin/xs-store-server:$IMAGE_TAG
