@@ -1,14 +1,14 @@
 aliyun-oss:
-  endpoint: 'yourEndpoint'
-  access-key-id: 'yourAccessKeyId'
-  access-key-secret: 'yourAccessKeySecret'
-  bucket-name: 'yourBucketName'
-  bucket-url: 'yourBucketUrl'
-  base-path: 'yourBasePath'
+  endpoint: oss-cn-shanghai.aliyuncs.com
+  access-key-id: LTAI5tL4KFrCXwa2KJM6Ky1s
+  access-key-secret: A6tsxSIYN2PO7C4kGKyfgaYKNkvVCq
+  bucket-name: xs-qingshi
+  bucket-url: https://xs-qingshi.oss-cn-shanghai.aliyuncs.com
+  base-path: oss://xs-qingshi/
 autocode:
   transfer-restart: true
-  root: /Users/txz/Code/go/xs-store-admin
-  server: /server
+  root: /Users/txz/Code/go/xs-store
+  server: /xs-store-server
   server-api: /api/v1/%s
   server-plug: /plugin/%s
   server-initialize: /initialize
@@ -16,7 +16,7 @@ autocode:
   server-request: /model/%s/request/
   server-router: /router/%s
   server-service: /service/%s
-  web: /web/src
+  web: /xs-store-admin/src
   web-api: /api
   web-form: /view
   web-table: /view
