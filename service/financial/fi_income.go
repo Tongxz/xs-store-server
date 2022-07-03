@@ -61,8 +61,8 @@ func (incomeService *IncomeService) GetIncomeInfoList(info financialReq.IncomeSe
 	if info.Invoice != nil {
 		db = db.Where("invoice = ?", info.Invoice)
 	}
-	if info.Category != "" {
-		db = db.Where("category LIKE ?", "%"+info.Category+"%")
+	if info.Category != nil {
+		db = db.Where("category = ?", info.Category)
 	}
 	if info.Waiter != "" {
 		db = db.Where("waiter LIKE ?", "%"+info.Waiter+"%")
