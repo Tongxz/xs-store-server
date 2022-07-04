@@ -11,6 +11,7 @@ type OutStock struct {
 	global.GVA_MODEL
 	Type       string   `json:"type" form:"type" gorm:"column:type;comment:出库类型;"`
 	Name       string   `json:"name" form:"name" gorm:"column:name;comment:出库物品名称;"`
+	Department string   `json:"department" form:"department" gorm:"column:department;comment:部门;"`
 	Item_type  string   `json:"item_type" form:"item_type" gorm:"column:item_type;comment:物品类型;"`
 	Unit       string   `json:"unit" form:"unit" gorm:"column:unit;comment:物品单位;"`
 	Quantity   *int     `json:"quantity" form:"quantity" gorm:"column:quantity;comment:出库数量;"`

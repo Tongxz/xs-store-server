@@ -57,7 +57,7 @@ func (expensesService *ExpensesService) GetExpensesInfoList(info financialReq.Ex
 	if info.Type != nil {
 		db = db.Where("type = ?", info.Type)
 	}
-	if info.Payment != "" {
+	if info.Payment != nil {
 		db = db.Where("payment = ?", info.Payment)
 	}
 	if info.Executor != "" {
