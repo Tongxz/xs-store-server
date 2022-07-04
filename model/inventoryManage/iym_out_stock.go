@@ -9,7 +9,7 @@ import (
 // 如果含有time.Time 请自行import time包
 type OutStock struct {
 	global.GVA_MODEL
-	Type       string   `json:"type" form:"type" gorm:"column:type;comment:出库类型;"`
+	Type       *int     `json:"type" form:"type" gorm:"column:type;comment:出库类型;"`
 	Name       string   `json:"name" form:"name" gorm:"column:name;comment:出库物品名称;"`
 	Department string   `json:"department" form:"department" gorm:"column:department;comment:部门;"`
 	Item_type  string   `json:"item_type" form:"item_type" gorm:"column:item_type;comment:物品类型;"`

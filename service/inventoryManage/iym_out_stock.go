@@ -54,7 +54,7 @@ func (stockService *OutStockService) GetOutStockInfoList(info inventoryManageReq
 	db := global.GVA_DB.Model(&inventoryManage.OutStock{})
 	var stocks []inventoryManage.OutStock
 	// 如果有条件搜索 下方会自动创建搜索语句
-	if info.Type != "" {
+	if info.Type != nil {
 		db = db.Where("type = ?", info.Type)
 	}
 	if info.Name != "" {
