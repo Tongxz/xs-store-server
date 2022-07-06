@@ -143,7 +143,6 @@ func (incomeApi *IncomeApi) GetIncomeList(c *gin.Context) {
 		global.GVA_LOG.Error("获取失败!", zap.Error(err))
 		response.FailWithMessage("获取失败", c)
 	} else {
-		global.GVA_LOG.Info("获取成功!", zap.Any("list", list))
 		response.OkWithDetailed(response.PageResult{
 			List:     list,
 			Total:    total,

@@ -5,7 +5,6 @@ import (
 	"github.com/tongxz/xs-admin-vue/server/model/common/request"
 	"github.com/tongxz/xs-admin-vue/server/model/financial"
 	financialReq "github.com/tongxz/xs-admin-vue/server/model/financial/request"
-	"go.uber.org/zap"
 )
 
 type IncomeService struct {
@@ -36,6 +35,7 @@ func (incomeService *IncomeService) DeleteIncomeByIds(ids request.IdsReq) (err e
 // Author [piexlmax](https://github.com/piexlmax)
 func (incomeService *IncomeService) UpdateIncome(income financial.Income) (err error) {
 	err = global.GVA_DB.Save(&income).Error
+	//global.GVA_LOG.Info("incomes:", zap.Any("incomes", income))
 	return err
 }
 
@@ -72,6 +72,5 @@ func (incomeService *IncomeService) GetIncomeInfoList(info financialReq.IncomeSe
 		return
 	}
 	err = db.Limit(limit).Offset(offset).Find(&incomes).Error
-	global.GVA_LOG.Info("incomes:", zap.Any("incomes", incomes))
 	return incomes, total, err
 }
