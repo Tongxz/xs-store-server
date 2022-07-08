@@ -44,6 +44,14 @@ func (warehousingService *WarehousingService) GetWarehousing(id uint) (warehousi
 	err = global.GVA_DB.Where("id = ?", id).First(&warehousing).Error
 	return
 }
+func (warehousingService *WarehousingService) GetWarehousingName() (list interface{}, err error) {
+	// 创建db
+	db := global.GVA_DB.Model(&inventoryManage.WarehousingName{})
+	var warehousings []inventoryManage.WarehousingName
+	// 如果有条件搜索 下方会自动创建搜索语句
+	err = db.Find(&warehousings).Error
+	return warehousings, err
+}
 
 // GetWarehousingInfoList 分页获取Warehousing记录
 // Author [piexlmax](https://github.com/piexlmax)

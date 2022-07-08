@@ -139,4 +139,23 @@ func (warehousingApi *WarehousingApi) GetWarehousingList(c *gin.Context) {
 			PageSize: pageInfo.PageSize,
 		}, "获取成功", c)
 	}
+} // GetWarehousingList 分页获取Warehousing列表
+// @Tags Warehousing
+// @Summary 分页获取Warehousing列表
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data query inventoryManageReq.WarehousingSearch true "分页获取Warehousing列表"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
+// @Router /warehousing/getWarehousingList [get]
+func (warehousingApi *WarehousingApi) GetWarehousingName(c *gin.Context) {
+	var warehousing inventoryManage.Warehousing
+	_ = c.ShouldBindQuery(&warehousing)
+	if rewarehousing, err := warehousingService.GetWarehousingName(); err != nil {
+		global.GVA_LOG.Error("查询失败!", zap.Error(err))
+		response.FailWithMessage("查询失败", c)
+	} else {
+		global.GVA_LOG.Info("查询成功!", zap.Any("warehousing", rewarehousing))
+		response.OkWithData(gin.H{"rewarehousing": rewarehousing}, c)
+	}
 }

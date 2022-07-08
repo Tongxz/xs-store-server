@@ -15,12 +15,23 @@ type Warehousing struct {
 	Type       *int     `json:"type" form:"type" gorm:"column:type;comment:物品所属分类;"`
 	Payment    *int     `json:"payment" form:"payment" gorm:"column:payment;comment:支付方式;"`
 	Quantity   *int     `json:"quantity" form:"quantity" gorm:"column:quantity;comment:入库物品数量;"`
+	Margin     *int     `json:"margin" form:"margin" gorm:"column:margin;comment:入库物品数量;"`
+	Unit       string   `json:"unit" form:"unit" gorm:"column:unit;comment:物品单位;"`
 	UnitPrice  *float64 `json:"unitPrice" form:"unitPrice" gorm:"column:unit_price;comment:物品单价;"`
 	Amount     *float64 `json:"amount" form:"amount" gorm:"column:amount;comment:总金额;"`
 	Remarks    string   `json:"remarks" form:"remarks" gorm:"column:remarks;comment:入库备注/说明;"`
 }
+type WarehousingName struct {
+	global.GVA_MODEL
+	Name string `json:"name" form:"name" gorm:"column:name;comment:入库物品名称;"`
+}
 
 // TableName Warehousing 表名
 func (Warehousing) TableName() string {
+	return "iym_Warehousing"
+}
+
+// TableName Warehousing 表名
+func (WarehousingName) TableName() string {
 	return "iym_Warehousing"
 }

@@ -23,5 +23,6 @@ func (s *WarehousingRouter) InitWarehousingRouter(Router *gin.RouterGroup) {
 	{
 		warehousingRouterWithoutRecord.GET("findWarehousing", warehousingApi.FindWarehousing)       // 根据ID获取Warehousing
 		warehousingRouterWithoutRecord.GET("getWarehousingList", warehousingApi.GetWarehousingList) // 获取Warehousing列表
+		warehousingRouterWithoutRecord.GET("getWarehousingName", warehousingApi.GetWarehousingName) // 获取Warehousing列表
 	}
 }
