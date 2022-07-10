@@ -15,7 +15,7 @@ type OutStock struct {
 	Item_type  string   `json:"item_type" form:"item_type" gorm:"column:item_type;comment:物品类型;"`
 	Unit       string   `json:"unit" form:"unit" gorm:"column:unit;comment:物品单位;"`
 	Quantity   *int     `json:"quantity" form:"quantity" gorm:"column:quantity;comment:出库数量;"`
-	Unit_price *float64 `json:"unit_price" form:"unit_price" gorm:"column:unit_price;comment:物品单价;"`
+	UnitPrice  *float64 `json:"unitPrice" form:"unitPrice" gorm:"column:unitPrice;comment:物品单价;"`
 	Amount     *float64 `json:"amount" form:"amount" gorm:"column:amount;comment:总金额;"`
 	Remarks    string   `json:"remarks" form:"remarks" gorm:"column:remarks;comment:备注;"`
 }
