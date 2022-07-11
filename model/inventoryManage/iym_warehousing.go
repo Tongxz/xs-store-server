@@ -15,7 +15,7 @@ type Warehousing struct {
 	Type       *int     `json:"type" form:"type" gorm:"column:type;comment:物品所属分类;"`
 	Payment    *int     `json:"payment" form:"payment" gorm:"column:payment;comment:支付方式;"`
 	Quantity   *int     `json:"quantity" form:"quantity" gorm:"column:quantity;comment:入库物品数量;"`
-	Margin     *int     `json:"margin" form:"margin" gorm:"column:margin;comment:入库物品数量;"`
+	Margin     *int     `json:"margin" form:"margin" gorm:"column:margin;comment:剩余物品数量;"`
 	Unit       string   `json:"unit" form:"unit" gorm:"column:unit;comment:物品单位;"`
 	UnitPrice  *float64 `json:"unitPrice" form:"unitPrice" gorm:"column:unit_price;comment:物品单价;"`
 	Amount     *float64 `json:"amount" form:"amount" gorm:"column:amount;comment:总金额;"`
