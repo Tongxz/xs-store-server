@@ -10,6 +10,7 @@ import (
 type OutStock struct {
 	global.GVA_MODEL
 	Type       *int     `json:"type" form:"type" gorm:"column:type;comment:出库类型;"`
+	WareId     *int     `json:"wareId" form:"wareId" gorm:"column:wareId;comment:出库物品ID;"`
 	Name       string   `json:"name" form:"name" gorm:"column:name;comment:出库物品名称;"`
 	Department string   `json:"department" form:"department" gorm:"column:department;comment:部门;"`
 	Item_type  string   `json:"item_type" form:"item_type" gorm:"column:item_type;comment:物品类型;"`

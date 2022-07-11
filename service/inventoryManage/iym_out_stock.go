@@ -5,6 +5,7 @@ import (
 	"github.com/tongxz/xs-admin-vue/server/model/common/request"
 	"github.com/tongxz/xs-admin-vue/server/model/inventoryManage"
 	inventoryManageReq "github.com/tongxz/xs-admin-vue/server/model/inventoryManage/request"
+	"gorm.io/gorm"
 )
 
 type OutStockService struct {
@@ -13,8 +14,20 @@ type OutStockService struct {
 // CreateOutStock 创建OutStock记录
 // Author [piexlmax](https://github.com/piexlmax)
 func (stockService *OutStockService) CreateOutStock(stock inventoryManage.OutStock) (err error) {
-	err = global.GVA_DB.Create(&stock).Error
-	return err
+	return global.GVA_DB.Transaction(func(tx *gorm.DB) error {
+		var ware inventoryManage.Warehousing
+		err = tx.Create(&stock).Error
+		err = global.GVA_DB.Where("id = ?", stock.WareId).First(&ware).Error
+		if *ware.Margin >= *stock.Quantity {
+			err = tx.Model(&inventoryManage.Warehousing{}).Where("id = ?", stock.WareId).Update("margin", *ware.Margin-*stock.Quantity).Error
+		} else {
+			tx.Rollback()
+		}
+		if err != nil {
+			return err
+		}
+		return err
+	})
 }
 
 // DeleteOutStock 删除OutStock记录
