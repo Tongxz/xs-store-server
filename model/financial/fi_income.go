@@ -9,6 +9,7 @@ import (
 // 如果含有time.Time 请自行import time包
 type Income struct {
 	global.GVA_MODEL
+	IncomeData string   `json:"incomeData" form:"incomeData" gorm:"type:date;column:incomeData;comment:收入日期;"`
 	Name       string   `json:"name" form:"name" gorm:"column:name;comment:姓名;"`
 	Mobile     *int     `json:"mobile" form:"mobile" gorm:"column:mobile;comment:手机号码;size:11;"`
 	Amount     *float64 `json:"amount" form:"amount" gorm:"column:amount;comment:金额;"`

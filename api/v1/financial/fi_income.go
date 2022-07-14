@@ -31,10 +31,10 @@ func (incomeApi *IncomeApi) CreateIncome(c *gin.Context) {
 	var income financial.Income
 	uuid.New()
 	_ = c.ShouldBindJSON(&income)
-	if err := utils.Verify(income, utils.IncomeVerify); err != nil {
-		response.FailWithMessage(err.Error(), c)
-		return
-	}
+	//if err := utils.Verify(income, utils.IncomeVerify); err != nil {
+	//	response.FailWithMessage(err.Error(), c)
+	//	return
+	//}
 	if err := incomeService.CreateIncome(income); err != nil {
 		global.GVA_LOG.Error("创建失败!", zap.Error(err))
 		response.FailWithMessage("创建失败", c)
