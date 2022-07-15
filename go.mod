@@ -1,4 +1,4 @@
-module github.com/tongxz/xs-admin-vue/server
+module github.com/tongxz/xs-admin-vue
 
 go 1.16
 

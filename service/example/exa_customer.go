@@ -1,11 +1,11 @@
 package example
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/example"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	systemService "github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/example"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	systemService "github.com/tongxz/xs-admin-vue/service/system"
 )
 
 type CustomerService struct{}

@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/system/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/system/request"
 )
 
 type JWT struct {

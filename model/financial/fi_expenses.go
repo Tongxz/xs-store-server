@@ -2,7 +2,7 @@
 package financial
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 // Expenses 结构体

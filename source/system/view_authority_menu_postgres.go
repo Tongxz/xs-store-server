@@ -3,13 +3,13 @@ package system
 import (
 	"context"
 	"fmt"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"gorm.io/gorm"
 	"strings"
 
 	"github.com/pkg/errors"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	sysModel "github.com/tongxz/xs-admin-vue/server/model/system"
+	"github.com/tongxz/xs-admin-vue/global"
+	sysModel "github.com/tongxz/xs-admin-vue/model/system"
 )
 
 const initOrderMenuViewPg = initOrderMenuAuthority + 1

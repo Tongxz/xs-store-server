@@ -3,7 +3,7 @@ package internal
 import (
 	"fmt"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 	"gorm.io/gorm/logger"
 )
 

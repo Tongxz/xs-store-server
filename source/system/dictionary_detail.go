@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 	"github.com/pkg/errors"
-	sysModel "github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	sysModel "github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"gorm.io/gorm"
 )
 

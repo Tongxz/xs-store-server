@@ -20,11 +20,11 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/tongxz/xs-admin-vue/server/resource/autocode_template/subcontract"
+	"github.com/tongxz/xs-admin-vue/resource/autocode_template/subcontract"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	"gorm.io/gorm"
 )
@@ -91,7 +91,7 @@ func Init(Package string) {
 		packageServiceName: {
 			path: filepath.Join(global.GVA_CONFIG.AutoCode.Root,
 				global.GVA_CONFIG.AutoCode.Server, "service", "enter.go"),
-			importCodeF:  "github.com/tongxz/xs-admin-vue/server/%s/%s",
+			importCodeF:  "github.com/tongxz/xs-admin-vue/%s/%s",
 			packageNameF: "%s",
 			groupName:    "ServiceGroup",
 			structNameF:  "%sServiceGroup",
@@ -99,7 +99,7 @@ func Init(Package string) {
 		packageRouterName: {
 			path: filepath.Join(global.GVA_CONFIG.AutoCode.Root,
 				global.GVA_CONFIG.AutoCode.Server, "router", "enter.go"),
-			importCodeF:  "github.com/tongxz/xs-admin-vue/server/%s/%s",
+			importCodeF:  "github.com/tongxz/xs-admin-vue/%s/%s",
 			packageNameF: "%s",
 			groupName:    "RouterGroup",
 			structNameF:  "%s",
@@ -107,7 +107,7 @@ func Init(Package string) {
 		packageAPIName: {
 			path: filepath.Join(global.GVA_CONFIG.AutoCode.Root,
 				global.GVA_CONFIG.AutoCode.Server, "api/v1", "enter.go"),
-			importCodeF:  "github.com/tongxz/xs-admin-vue/server/%s/%s",
+			importCodeF:  "github.com/tongxz/xs-admin-vue/%s/%s",
 			packageNameF: "%s",
 			groupName:    "ApiGroup",
 			structNameF:  "%sApiGroup",
@@ -298,7 +298,7 @@ func (autoCodeService *AutoCodeService) CreateTemp(autoCode system.AutoCodeStruc
 			global.GVA_CONFIG.AutoCode.Server, global.GVA_CONFIG.AutoCode.SInitialize, "gorm.go")
 		var routePath = filepath.Join(global.GVA_CONFIG.AutoCode.Root,
 			global.GVA_CONFIG.AutoCode.Server, global.GVA_CONFIG.AutoCode.SInitialize, "router.go")
-		var imporStr = fmt.Sprintf("github.com/tongxz/xs-admin-vue/server/model/%s", autoCode.Package)
+		var imporStr = fmt.Sprintf("github.com/tongxz/xs-admin-vue/model/%s", autoCode.Package)
 		_ = ImportReference(routePath, "", "", autoCode.Package, "")
 		_ = ImportReference(gormPath, imporStr, "", "", "")
 

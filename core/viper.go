@@ -9,9 +9,9 @@ import (
 
 	"github.com/songzhibin97/gkit/cache/local_cache"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	_ "github.com/tongxz/xs-admin-vue/server/packfile"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	_ "github.com/tongxz/xs-admin-vue/packfile"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"

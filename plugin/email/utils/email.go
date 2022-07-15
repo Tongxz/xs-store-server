@@ -6,7 +6,7 @@ import (
 	"net/smtp"
 	"strings"
 
-	"github.com/tongxz/xs-admin-vue/server/plugin/email/global"
+	"github.com/tongxz/xs-admin-vue/plugin/email/global"
 
 	"github.com/jordan-wright/email"
 )

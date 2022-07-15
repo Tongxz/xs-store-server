@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
 )
 
 // SysAutoCodeHistory 自动迁移代码记录,用于回滚,重放使用

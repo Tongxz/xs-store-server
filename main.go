@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/core"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/initialize"
+	"github.com/tongxz/xs-admin-vue/core"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/initialize"
 	"go.uber.org/zap"
 )
 

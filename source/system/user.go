@@ -4,9 +4,9 @@ import (
 	"context"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
-	sysModel "github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	sysModel "github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/service/system"
+	"github.com/tongxz/xs-admin-vue/utils"
 	"gorm.io/gorm"
 )
 

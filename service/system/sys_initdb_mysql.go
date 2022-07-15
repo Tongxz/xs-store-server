@@ -5,14 +5,14 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gookit/color"
-	"github.com/tongxz/xs-admin-vue/server/config"
+	"github.com/tongxz/xs-admin-vue/config"
 	"path/filepath"
 
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	uuid "github.com/satori/go.uuid"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/system/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/system/request"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

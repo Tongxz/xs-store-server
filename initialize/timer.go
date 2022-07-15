@@ -3,9 +3,9 @@ package initialize
 import (
 	"fmt"
 
-	"github.com/tongxz/xs-admin-vue/server/config"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/config"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/utils"
 )
 
 func Timer() {

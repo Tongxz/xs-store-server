@@ -4,7 +4,7 @@ package system
 import (
 	"time"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 // 如果含有time.Time 请自行import time包

@@ -2,7 +2,7 @@
 package inventoryManage
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 // Warehousing 结构体

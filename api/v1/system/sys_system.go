@@ -1,11 +1,11 @@
 package system
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	systemRes "github.com/tongxz/xs-admin-vue/server/model/system/response"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	systemRes "github.com/tongxz/xs-admin-vue/model/system/response"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

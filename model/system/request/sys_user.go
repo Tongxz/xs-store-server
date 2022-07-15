@@ -1,6 +1,6 @@
 package request
 
-import model "github.com/tongxz/xs-admin-vue/server/model/system"
+import model "github.com/tongxz/xs-admin-vue/model/system"
 
 // User register structure
 type Register struct {

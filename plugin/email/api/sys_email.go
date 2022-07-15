@@ -2,10 +2,10 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-	email_response "github.com/tongxz/xs-admin-vue/server/plugin/email/model/response"
-	"github.com/tongxz/xs-admin-vue/server/plugin/email/service"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+	email_response "github.com/tongxz/xs-admin-vue/plugin/email/model/response"
+	"github.com/tongxz/xs-admin-vue/plugin/email/service"
 	"go.uber.org/zap"
 )
 

@@ -2,10 +2,10 @@ package system
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-	systemReq "github.com/tongxz/xs-admin-vue/server/model/system/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+	systemReq "github.com/tongxz/xs-admin-vue/model/system/request"
 	"go.uber.org/zap"
 )
 

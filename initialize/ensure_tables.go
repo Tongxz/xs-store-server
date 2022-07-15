@@ -3,9 +3,9 @@ package initialize
 import (
 	"context"
 	adapter "github.com/casbin/gorm-adapter/v3"
-	"github.com/tongxz/xs-admin-vue/server/model/example"
-	sysModel "github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/model/example"
+	sysModel "github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"gorm.io/gorm"
 )
 

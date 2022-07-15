@@ -1,7 +1,7 @@
 package system
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 type SysBaseMenu struct {

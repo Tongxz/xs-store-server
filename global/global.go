@@ -4,13 +4,13 @@ import (
 	"sync"
 
 	"github.com/songzhibin97/gkit/cache/local_cache"
-	"github.com/tongxz/xs-admin-vue/server/utils/timer"
+	"github.com/tongxz/xs-admin-vue/utils/timer"
 
 	"golang.org/x/sync/singleflight"
 
 	"go.uber.org/zap"
 
-	"github.com/tongxz/xs-admin-vue/server/config"
+	"github.com/tongxz/xs-admin-vue/config"
 
 	"github.com/go-redis/redis/v8"
 	"github.com/spf13/viper"

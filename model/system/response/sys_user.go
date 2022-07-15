@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/model/system"
+	"github.com/tongxz/xs-admin-vue/model/system"
 )
 
 type SysUserResponse struct {

@@ -2,12 +2,12 @@ package core
 
 import (
 	"fmt"
-	"github.com/tongxz/xs-admin-vue/server/core/internal"
+	"github.com/tongxz/xs-admin-vue/core/internal"
 	"os"
 	"time"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/utils"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

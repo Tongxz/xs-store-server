@@ -1,10 +1,10 @@
 package inventoryManage
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/inventoryManage"
-	inventoryManageReq "github.com/tongxz/xs-admin-vue/server/model/inventoryManage/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/inventoryManage"
+	inventoryManageReq "github.com/tongxz/xs-admin-vue/model/inventoryManage/request"
 	"gorm.io/gorm"
 )
 

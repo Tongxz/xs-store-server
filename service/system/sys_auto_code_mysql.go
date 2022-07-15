@@ -1,8 +1,8 @@
 package system
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/system/response"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/system/response"
 )
 
 var AutoCodeMysql = new(autoCodeMysql)

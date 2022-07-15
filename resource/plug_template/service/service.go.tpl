@@ -2,7 +2,7 @@ package service
 
  {{- if .NeedModel }}
 import (
-   "github.com/tongxz/xs-admin-vue/server/plugin/{{ .Snake}}/model"
+   "github.com/tongxz/xs-admin-vue/plugin/{{ .Snake}}/model"
 )
 {{ end }}
 

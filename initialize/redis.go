@@ -3,7 +3,7 @@ package initialize
 import (
 	"context"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 
 	"github.com/go-redis/redis/v8"
 	"go.uber.org/zap"

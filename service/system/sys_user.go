@@ -4,10 +4,10 @@ import (
 	"errors"
 	"fmt"
 	uuid "github.com/satori/go.uuid"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/utils"
 	"gorm.io/gorm"
 )
 

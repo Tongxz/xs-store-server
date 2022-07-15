@@ -2,8 +2,8 @@ package financial
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/api/v1"
-	"github.com/tongxz/xs-admin-vue/server/middleware"
+	"github.com/tongxz/xs-admin-vue/api/v1"
+	"github.com/tongxz/xs-admin-vue/middleware"
 )
 
 type IncomeRouter struct {

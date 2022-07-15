@@ -1,7 +1,7 @@
 package example
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 // file struct, 文件结构体

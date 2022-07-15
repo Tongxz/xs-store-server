@@ -6,13 +6,13 @@ import (
 	"mime/multipart"
 	"strconv"
 
-	"github.com/tongxz/xs-admin-vue/server/model/example"
+	"github.com/tongxz/xs-admin-vue/model/example"
 
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-	exampleRes "github.com/tongxz/xs-admin-vue/server/model/example/response"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+	exampleRes "github.com/tongxz/xs-admin-vue/model/example/response"
+	"github.com/tongxz/xs-admin-vue/utils"
 	"go.uber.org/zap"
 )
 

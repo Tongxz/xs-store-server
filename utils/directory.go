@@ -4,7 +4,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 	"go.uber.org/zap"
 )
 

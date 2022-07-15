@@ -9,10 +9,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

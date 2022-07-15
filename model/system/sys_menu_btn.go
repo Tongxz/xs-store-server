@@ -1,6 +1,6 @@
 package system
 
-import "github.com/tongxz/xs-admin-vue/server/global"
+import "github.com/tongxz/xs-admin-vue/global"
 
 type SysBaseMenuBtn struct {
 	global.GVA_MODEL

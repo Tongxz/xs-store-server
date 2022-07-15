@@ -1,6 +1,6 @@
 package response
 
-import "github.com/tongxz/xs-admin-vue/server/model/system"
+import "github.com/tongxz/xs-admin-vue/model/system"
 
 type SysAPIResponse struct {
 	Api system.SysApi `json:"api"`

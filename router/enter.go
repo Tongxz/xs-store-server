@@ -1,10 +1,10 @@
 package router
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/router/example"
-	"github.com/tongxz/xs-admin-vue/server/router/financial"
-	"github.com/tongxz/xs-admin-vue/server/router/inventoryManage"
-	"github.com/tongxz/xs-admin-vue/server/router/system"
+	"github.com/tongxz/xs-admin-vue/router/example"
+	"github.com/tongxz/xs-admin-vue/router/financial"
+	"github.com/tongxz/xs-admin-vue/router/inventoryManage"
+	"github.com/tongxz/xs-admin-vue/router/system"
 )
 
 type RouterGroup struct {

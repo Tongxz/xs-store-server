@@ -2,9 +2,9 @@ package {{ .Snake}}
 
 import (
 {{- if .HasGlobal }}
-	"github.com/tongxz/xs-admin-vue/server/plugin/{{ .Snake}}/global"
+	"github.com/tongxz/xs-admin-vue/plugin/{{ .Snake}}/global"
 {{- end }}
-	"github.com/tongxz/xs-admin-vue/server/plugin/{{ .Snake}}/router"
+	"github.com/tongxz/xs-admin-vue/plugin/{{ .Snake}}/router"
 	"github.com/gin-gonic/gin"
 )
 

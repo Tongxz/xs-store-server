@@ -4,7 +4,7 @@ import (
 	"context"
 	adapter "github.com/casbin/gorm-adapter/v3"
 	"github.com/pkg/errors"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"gorm.io/gorm"
 )
 

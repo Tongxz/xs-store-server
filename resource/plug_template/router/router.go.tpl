@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/plugin/{{ .Snake}}/api"
+	"github.com/tongxz/xs-admin-vue/plugin/{{ .Snake}}/api"
 	"github.com/gin-gonic/gin"
 )
 

@@ -2,8 +2,8 @@ package email
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/plugin/email/global"
-	"github.com/tongxz/xs-admin-vue/server/plugin/email/router"
+	"github.com/tongxz/xs-admin-vue/plugin/email/global"
+	"github.com/tongxz/xs-admin-vue/plugin/email/router"
 )
 
 type emailPlugin struct{}

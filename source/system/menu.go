@@ -3,8 +3,8 @@ package system
 import (
 	"context"
 	"github.com/pkg/errors"
-	. "github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	. "github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"gorm.io/gorm"
 )
 

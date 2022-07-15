@@ -1,8 +1,8 @@
 package {{.Package}}
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/api/v1"
-	"github.com/tongxz/xs-admin-vue/server/middleware"
+	"github.com/tongxz/xs-admin-vue/api/v1"
+	"github.com/tongxz/xs-admin-vue/middleware"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,9 +1,9 @@
 package initialize
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/config"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/initialize/internal"
+	"github.com/tongxz/xs-admin-vue/config"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/initialize/internal"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

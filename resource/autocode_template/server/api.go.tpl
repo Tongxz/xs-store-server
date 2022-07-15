@@ -1,12 +1,12 @@
 package {{.Package}}
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-    "github.com/tongxz/xs-admin-vue/server/model/{{.Package}}"
-    "github.com/tongxz/xs-admin-vue/server/model/common/request"
-    {{.Package}}Req "github.com/tongxz/xs-admin-vue/server/model/{{.Package}}/request"
-    "github.com/tongxz/xs-admin-vue/server/model/common/response"
-    "github.com/tongxz/xs-admin-vue/server/service"
+	"github.com/tongxz/xs-admin-vue/global"
+    "github.com/tongxz/xs-admin-vue/model/{{.Package}}"
+    "github.com/tongxz/xs-admin-vue/model/common/request"
+    {{.Package}}Req "github.com/tongxz/xs-admin-vue/model/{{.Package}}/request"
+    "github.com/tongxz/xs-admin-vue/model/common/response"
+    "github.com/tongxz/xs-admin-vue/service"
     "github.com/gin-gonic/gin"
     "go.uber.org/zap"
 )

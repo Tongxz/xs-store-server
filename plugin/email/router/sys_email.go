@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/middleware"
-	"github.com/tongxz/xs-admin-vue/server/plugin/email/api"
+	"github.com/tongxz/xs-admin-vue/middleware"
+	"github.com/tongxz/xs-admin-vue/plugin/email/api"
 )
 
 type EmailRouter struct{}

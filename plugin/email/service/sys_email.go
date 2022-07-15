@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/plugin/email/utils"
+	"github.com/tongxz/xs-admin-vue/plugin/email/utils"
 )
 
 type EmailService struct{}

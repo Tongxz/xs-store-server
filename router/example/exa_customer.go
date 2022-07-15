@@ -2,8 +2,8 @@ package example
 
 import (
 	"github.com/gin-gonic/gin"
-	v1 "github.com/tongxz/xs-admin-vue/server/api/v1"
-	"github.com/tongxz/xs-admin-vue/server/middleware"
+	v1 "github.com/tongxz/xs-admin-vue/api/v1"
+	"github.com/tongxz/xs-admin-vue/middleware"
 )
 
 type CustomerRouter struct{}

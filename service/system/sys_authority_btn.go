@@ -2,10 +2,10 @@ package system
 
 import (
 	"errors"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/model/system/request"
-	"github.com/tongxz/xs-admin-vue/server/model/system/response"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/model/system/request"
+	"github.com/tongxz/xs-admin-vue/model/system/response"
 	"gorm.io/gorm"
 )
 

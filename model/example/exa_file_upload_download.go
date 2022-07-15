@@ -1,7 +1,7 @@
 package example
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 type ExaFileUploadAndDownload struct {

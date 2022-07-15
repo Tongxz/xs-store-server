@@ -3,8 +3,8 @@ package example
 import (
 	"context"
 	"github.com/pkg/errors"
-	"github.com/tongxz/xs-admin-vue/server/model/example"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/model/example"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"gorm.io/gorm"
 )
 

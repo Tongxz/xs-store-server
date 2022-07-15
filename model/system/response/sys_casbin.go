@@ -1,7 +1,7 @@
 package response
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/model/system/request"
+	"github.com/tongxz/xs-admin-vue/model/system/request"
 )
 
 type PolicyPathResponse struct {

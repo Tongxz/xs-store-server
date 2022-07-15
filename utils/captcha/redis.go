@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/mojocn/base64Captcha"
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 	"go.uber.org/zap"
 )
 

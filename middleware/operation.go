@@ -11,12 +11,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/service"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/service"
 	"go.uber.org/zap"
 )
 

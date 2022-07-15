@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/utils"
 	"go.uber.org/zap"
 )
 

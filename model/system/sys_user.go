@@ -2,7 +2,7 @@ package system
 
 import (
 	"github.com/satori/go.uuid"
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 )
 
 type SysUser struct {

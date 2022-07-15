@@ -1,6 +1,6 @@
 package request
 
-import "github.com/tongxz/xs-admin-vue/server/model/common/request"
+import "github.com/tongxz/xs-admin-vue/model/common/request"
 
 type SysAutoHistory struct {
 	request.PageInfo

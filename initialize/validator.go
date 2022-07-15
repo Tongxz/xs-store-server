@@ -1,6 +1,6 @@
 package initialize
 
-import "github.com/tongxz/xs-admin-vue/server/utils"
+import "github.com/tongxz/xs-admin-vue/utils"
 
 func init() {
 	_ = utils.RegisterRule("PageVerify",

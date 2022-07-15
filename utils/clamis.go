@@ -3,8 +3,8 @@ package utils
 import (
 	"github.com/gin-gonic/gin"
 	uuid "github.com/satori/go.uuid"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	systemReq "github.com/tongxz/xs-admin-vue/server/model/system/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	systemReq "github.com/tongxz/xs-admin-vue/model/system/request"
 )
 
 func GetClaims(c *gin.Context) (*systemReq.CustomClaims, error) {

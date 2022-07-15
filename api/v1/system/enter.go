@@ -1,6 +1,6 @@
 package system
 
-import "github.com/tongxz/xs-admin-vue/server/service"
+import "github.com/tongxz/xs-admin-vue/service"
 
 type ApiGroup struct {
 	DBApi

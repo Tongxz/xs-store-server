@@ -1,10 +1,10 @@
 package api
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-{{ if .NeedModel }}	"github.com/tongxz/xs-admin-vue/server/plugin/{{ .Snake}}/model" {{ end }}
-	"github.com/tongxz/xs-admin-vue/server/plugin/{{ .Snake}}/service"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+{{ if .NeedModel }}	"github.com/tongxz/xs-admin-vue/plugin/{{ .Snake}}/model" {{ end }}
+	"github.com/tongxz/xs-admin-vue/plugin/{{ .Snake}}/service"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )

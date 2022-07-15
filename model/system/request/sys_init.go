@@ -3,7 +3,7 @@ package request
 import (
 	"fmt"
 
-	"github.com/tongxz/xs-admin-vue/server/config"
+	"github.com/tongxz/xs-admin-vue/config"
 )
 
 type InitDB struct {

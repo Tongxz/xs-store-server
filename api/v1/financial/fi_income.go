@@ -3,13 +3,13 @@ package financial
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/common/response"
-	"github.com/tongxz/xs-admin-vue/server/model/financial"
-	financialReq "github.com/tongxz/xs-admin-vue/server/model/financial/request"
-	"github.com/tongxz/xs-admin-vue/server/service"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/common/response"
+	"github.com/tongxz/xs-admin-vue/model/financial"
+	financialReq "github.com/tongxz/xs-admin-vue/model/financial/request"
+	"github.com/tongxz/xs-admin-vue/service"
+	"github.com/tongxz/xs-admin-vue/utils"
 	"go.uber.org/zap"
 )
 

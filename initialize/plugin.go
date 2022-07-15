@@ -2,9 +2,9 @@ package initialize
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/plugin/email"
-	"github.com/tongxz/xs-admin-vue/server/utils/plugin"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/plugin/email"
+	"github.com/tongxz/xs-admin-vue/utils/plugin"
 )
 
 func PluginInit(group *gin.RouterGroup, Plugin ...plugin.Plugin) {

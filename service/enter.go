@@ -1,10 +1,10 @@
 package service
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/service/example"
-	"github.com/tongxz/xs-admin-vue/server/service/financial"
-	"github.com/tongxz/xs-admin-vue/server/service/inventoryManage"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/service/example"
+	"github.com/tongxz/xs-admin-vue/service/financial"
+	"github.com/tongxz/xs-admin-vue/service/inventoryManage"
+	"github.com/tongxz/xs-admin-vue/service/system"
 )
 
 type ServiceGroup struct {

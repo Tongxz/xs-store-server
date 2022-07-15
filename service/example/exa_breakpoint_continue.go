@@ -3,8 +3,8 @@ package example
 import (
 	"errors"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/example"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/example"
 	"gorm.io/gorm"
 )
 

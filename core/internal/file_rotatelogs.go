@@ -2,7 +2,7 @@ package internal
 
 import (
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
-	"github.com/tongxz/xs-admin-vue/server/global"
+	"github.com/tongxz/xs-admin-vue/global"
 	"go.uber.org/zap/zapcore"
 	"os"
 	"path"

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/initialize"
-	"github.com/tongxz/xs-admin-vue/server/service/system"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/initialize"
+	"github.com/tongxz/xs-admin-vue/service/system"
 	"go.uber.org/zap"
 )
 

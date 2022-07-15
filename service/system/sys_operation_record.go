@@ -1,10 +1,10 @@
 package system
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	systemReq "github.com/tongxz/xs-admin-vue/server/model/system/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	systemReq "github.com/tongxz/xs-admin-vue/model/system/request"
 )
 
 //@author: [granty1](https://github.com/granty1)

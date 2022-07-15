@@ -1,10 +1,10 @@
 package financial
 
 import (
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/financial"
-	financialReq "github.com/tongxz/xs-admin-vue/server/model/financial/request"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/financial"
+	financialReq "github.com/tongxz/xs-admin-vue/model/financial/request"
 )
 
 type ExpensesService struct {

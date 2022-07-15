@@ -3,17 +3,17 @@ package system
 import (
 	"errors"
 	"fmt"
-	systemReq "github.com/tongxz/xs-admin-vue/server/model/system/request"
+	systemReq "github.com/tongxz/xs-admin-vue/model/system/request"
 	"path/filepath"
 	"strings"
 	"time"
 
-	"github.com/tongxz/xs-admin-vue/server/model/system/response"
+	"github.com/tongxz/xs-admin-vue/model/system/response"
 
-	"github.com/tongxz/xs-admin-vue/server/global"
-	"github.com/tongxz/xs-admin-vue/server/model/common/request"
-	"github.com/tongxz/xs-admin-vue/server/model/system"
-	"github.com/tongxz/xs-admin-vue/server/utils"
+	"github.com/tongxz/xs-admin-vue/global"
+	"github.com/tongxz/xs-admin-vue/model/common/request"
+	"github.com/tongxz/xs-admin-vue/model/system"
+	"github.com/tongxz/xs-admin-vue/utils"
 
 	"go.uber.org/zap"
 )

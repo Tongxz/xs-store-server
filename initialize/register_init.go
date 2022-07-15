@@ -1,8 +1,8 @@
 package initialize
 
 import (
-	_ "github.com/tongxz/xs-admin-vue/server/source/example"
-	_ "github.com/tongxz/xs-admin-vue/server/source/system"
+	_ "github.com/tongxz/xs-admin-vue/source/example"
+	_ "github.com/tongxz/xs-admin-vue/source/system"
 )
 
 func init() {
