@@ -25,6 +25,20 @@ type WarehousingName struct {
 	global.GVA_MODEL
 	Name string `json:"name" form:"name" gorm:"column:name;comment:入库物品名称;"`
 }
+type WarehousingUp struct {
+	global.GVA_MODEL
+	ImgUrl     []string `json:"imgUrl" `
+	Name       string   `json:"name" `
+	Department string   `json:"department" `
+	Type       *int     `json:"type" `
+	Payment    *int     `json:"payment" `
+	Quantity   *int     `json:"quantity" `
+	Margin     *int     `json:"margin" `
+	Unit       string   `json:"unit" `
+	UnitPrice  *float64 `json:"unitPrice" `
+	Amount     *float64 `json:"amount" `
+	Remarks    string   `json:"remarks" `
+}
 
 // TableName Warehousing 表名
 func (Warehousing) TableName() string {
