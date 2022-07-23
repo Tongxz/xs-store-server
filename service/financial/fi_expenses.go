@@ -70,6 +70,6 @@ func (expensesService *ExpensesService) GetExpensesInfoList(info financialReq.Ex
 	if err != nil {
 		return
 	}
-	err = db.Limit(limit).Offset(offset).Find(&expensess).Error
+	err = db.Order("expnDate desc").Limit(limit).Offset(offset).Find(&expensess).Error
 	return expensess, total, err
 }
