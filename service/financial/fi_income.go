@@ -74,6 +74,6 @@ func (incomeService *IncomeService) GetIncomeInfoList(info financialReq.IncomeSe
 	if err != nil {
 		return
 	}
-	err = db.Limit(limit).Offset(offset).Find(&incomes).Error
+	err = db.Order("incomeData desc").Limit(limit).Offset(offset).Find(&incomes).Error
 	return incomes, total, err
 }

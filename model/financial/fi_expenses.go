@@ -9,7 +9,7 @@ import (
 // 如果含有time.Time 请自行import time包
 type Expenses struct {
 	global.GVA_MODEL
-	ExpnDate   string   `json:"expnDate" form:"expnDate" gorm:"type:data;column:expnDate;comment:收入日期;"`
+	ExpnDate   string   `json:"expnDate" form:"expnDate" gorm:"column:expnDate;comment:收入日期;"`
 	Content    string   `json:"content" form:"content" gorm:"column:content;comment:支出内容说明;"`
 	Amount     *float64 `json:"amount" form:"amount" gorm:"column:amount;comment:支出金额;"`
 	Department string   `json:"department" form:"department" gorm:"column:department;comment:部门;"`
