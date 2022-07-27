@@ -49,7 +49,7 @@ func (warehousingService *WarehousingService) GetWarehousingName() (list interfa
 	db := global.GVA_DB.Model(&inventoryManage.WarehousingName{})
 	var warehousings []inventoryManage.WarehousingName
 	// 如果有条件搜索 下方会自动创建搜索语句
-	err = db.Find(&warehousings).Error
+	err = db.Where("Margin > ?", 0).Find(&warehousings).Error
 	return warehousings, err
 }
 
