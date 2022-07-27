@@ -18,6 +18,7 @@ type Warehousing struct {
 	Margin     *int     `json:"margin" form:"margin" gorm:"column:margin;comment:剩余物品数量;"`
 	Unit       string   `json:"unit" form:"unit" gorm:"column:unit;comment:物品单位;"`
 	UnitPrice  *float64 `json:"unitPrice" form:"unitPrice" gorm:"column:unit_price;comment:物品单价;"`
+	Cost       *float64 `json:"cost" form:"cost" gorm:"column:cost;comment:成本价;"`
 	Amount     *float64 `json:"amount" form:"amount" gorm:"column:amount;comment:总金额;"`
 	Remarks    string   `json:"remarks" form:"remarks" gorm:"column:remarks;comment:入库备注/说明;"`
 }
