@@ -78,6 +78,6 @@ func (warehousingService *WarehousingService) GetWarehousingInfoList(info invent
 	if err != nil {
 		return
 	}
-	err = db.Limit(limit).Offset(offset).Find(&warehousings).Error
+	err = db.Order("created_at desc").Limit(limit).Offset(offset).Find(&warehousings).Error
 	return warehousings, total, err
 }
