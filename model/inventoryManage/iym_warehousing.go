@@ -24,7 +24,8 @@ type Warehousing struct {
 }
 type WarehousingName struct {
 	global.GVA_MODEL
-	Name string `json:"name" form:"name" gorm:"column:name;comment:入库物品名称;"`
+	Name   string `json:"name" form:"name" gorm:"column:name;comment:入库物品名称;"`
+	Margin *int   `json:"margin" form:"margin" gorm:"column:margin;comment:剩余物品数量;"`
 }
 type WarehousingUp struct {
 	global.GVA_MODEL
