@@ -13,6 +13,7 @@ type Warehousing struct {
 	Name       string   `json:"name" form:"name" gorm:"column:name;comment:入库物品名称;"`
 	Department string   `json:"department" form:"department" gorm:"column:department;comment:所属部门;"`
 	Type       *int     `json:"type" form:"type" gorm:"column:type;comment:物品所属分类;"`
+	IncomeType *int     `json:"income_type" form:"income_type" gorm:"column:income_type;comment:物品所属分类;"`
 	Payment    *int     `json:"payment" form:"payment" gorm:"column:payment;comment:支付方式;"`
 	Quantity   *int     `json:"quantity" form:"quantity" gorm:"column:quantity;comment:入库物品数量;"`
 	Margin     *int     `json:"margin" form:"margin" gorm:"column:margin;comment:剩余物品数量;"`
@@ -26,6 +27,7 @@ type WarehousingName struct {
 	global.GVA_MODEL
 	Name   string `json:"name" form:"name" gorm:"column:name;comment:入库物品名称;"`
 	Margin *int   `json:"margin" form:"margin" gorm:"column:margin;comment:剩余物品数量;"`
+	Unit   string `json:"unit" form:"unit" gorm:"column:unit;comment:剩余物品数量;"`
 }
 type WarehousingUp struct {
 	global.GVA_MODEL

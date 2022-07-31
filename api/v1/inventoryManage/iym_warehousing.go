@@ -151,7 +151,7 @@ func (warehousingApi *WarehousingApi) GetWarehousingList(c *gin.Context) {
 func (warehousingApi *WarehousingApi) GetWarehousingName(c *gin.Context) {
 	var warehousing inventoryManage.Warehousing
 	_ = c.ShouldBindQuery(&warehousing)
-	if rewarehousing, err := warehousingService.GetWarehousingName(); err != nil {
+	if rewarehousing, err := warehousingService.GetWarehousingName(warehousing.IncomeType); err != nil {
 		global.GVA_LOG.Error("查询失败!", zap.Error(err))
 		response.FailWithMessage("查询失败", c)
 	} else {

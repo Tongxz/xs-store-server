@@ -99,6 +99,8 @@ func (incomeApi *IncomeApi) UpdateIncome(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
+	global.GVA_LOG.Info("收入数据", zap.Any("income", income))
+	global.GVA_LOG.Info("收入详情数据", zap.Any("incomeDetail", income.IncomeDetails))
 	if err := incomeService.UpdateIncome(income); err != nil {
 		global.GVA_LOG.Error("更新失败!", zap.Error(err))
 		response.FailWithMessage("更新失败", c)

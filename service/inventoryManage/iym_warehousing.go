@@ -44,12 +44,15 @@ func (warehousingService *WarehousingService) GetWarehousing(id uint) (warehousi
 	err = global.GVA_DB.Where("id = ?", id).First(&warehousing).Error
 	return
 }
-func (warehousingService *WarehousingService) GetWarehousingName() (list interface{}, err error) {
+func (warehousingService *WarehousingService) GetWarehousingName(incomeType *int) (list interface{}, err error) {
 	// 创建db
 	db := global.GVA_DB.Model(&inventoryManage.WarehousingName{})
 	var warehousings []inventoryManage.WarehousingName
 	// 如果有条件搜索 下方会自动创建搜索语句
-	err = db.Where("Margin > ?", 0).Find(&warehousings).Error
+	if incomeType != nil {
+		db = db.Where("income_type = ?", incomeType)
+	}
+	err = db.Where("Margin > ? ", 0).Find(&warehousings).Error
 	return warehousings, err
 }
 
