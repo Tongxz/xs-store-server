@@ -19,6 +19,10 @@ type Expenses struct {
 	Invoice    *bool    `json:"invoice" form:"invoice" gorm:"column:invoice;comment:是否开票;"`
 	Note       string   `json:"note" form:"note" gorm:"column:note;comment:备注说明;"`
 }
+type ExpensesExcel struct {
+	FileName string     `json:"fileName"`
+	InfoList []Expenses `json:"infoList"`
+}
 
 // TableName Expenses 表名
 func (Expenses) TableName() string {
