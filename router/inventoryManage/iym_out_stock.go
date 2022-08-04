@@ -15,10 +15,10 @@ func (s *OutStockRouter) InitOutStockRouter(Router *gin.RouterGroup) {
 	stockRouterWithoutRecord := Router.Group("stock")
 	var stockApi = v1.ApiGroupApp.InventorymanageApiGroup.OutStockApi
 	{
-		stockRouter.POST("createOutStock", stockApi.CreateOutStock)             // 新建OutStock
-		stockRouter.DELETE("deleteOutStock", stockApi.DeleteOutStock)           // 删除OutStock
-		stockRouter.DELETE("deleteOutStockByIds", stockApi.DeleteOutStockByIds) // 批量删除OutStock
-		stockRouter.PUT("updateOutStock", stockApi.UpdateOutStock)              // 更新OutStock
+		stockRouter.POST("createOutStock", stockApi.CreateOutStock)           // 新建OutStock
+		stockRouter.POST("deleteOutStock", stockApi.DeleteOutStock)           // 删除OutStock
+		stockRouter.POST("deleteOutStockByIds", stockApi.DeleteOutStockByIds) // 批量删除OutStock
+		stockRouter.PUT("updateOutStock", stockApi.UpdateOutStock)            // 更新OutStock
 	}
 	{
 		stockRouterWithoutRecord.GET("findOutStock", stockApi.FindOutStock)       // 根据ID获取OutStock

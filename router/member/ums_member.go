@@ -15,10 +15,10 @@ func (s *MemberRouter) InitMemberRouter(Router *gin.RouterGroup) {
 	memberRouterWithoutRecord := Router.Group("member")
 	var memberApi = v1.ApiGroupApp.MemberApiGroup.MemberApi
 	{
-		memberRouter.POST("createMember", memberApi.CreateMember)             // 新建Member
-		memberRouter.DELETE("deleteMember", memberApi.DeleteMember)           // 删除Member
-		memberRouter.DELETE("deleteMemberByIds", memberApi.DeleteMemberByIds) // 批量删除Member
-		memberRouter.PUT("updateMember", memberApi.UpdateMember)              // 更新Member
+		memberRouter.POST("createMember", memberApi.CreateMember)           // 新建Member
+		memberRouter.POST("deleteMember", memberApi.DeleteMember)           // 删除Member
+		memberRouter.POST("deleteMemberByIds", memberApi.DeleteMemberByIds) // 批量删除Member
+		memberRouter.PUT("updateMember", memberApi.UpdateMember)            // 更新Member
 	}
 	{
 		memberRouterWithoutRecord.GET("findMember", memberApi.FindMember)       // 根据ID获取Member

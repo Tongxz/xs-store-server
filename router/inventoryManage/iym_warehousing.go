@@ -15,14 +15,15 @@ func (s *WarehousingRouter) InitWarehousingRouter(Router *gin.RouterGroup) {
 	warehousingRouterWithoutRecord := Router.Group("warehousing")
 	var warehousingApi = v1.ApiGroupApp.InventorymanageApiGroup.WarehousingApi
 	{
-		warehousingRouter.POST("createWarehousing", warehousingApi.CreateWarehousing)             // 新建Warehousing
-		warehousingRouter.DELETE("deleteWarehousing", warehousingApi.DeleteWarehousing)           // 删除Warehousing
-		warehousingRouter.DELETE("deleteWarehousingByIds", warehousingApi.DeleteWarehousingByIds) // 批量删除Warehousing
-		warehousingRouter.PUT("updateWarehousing", warehousingApi.UpdateWarehousing)              // 更新Warehousing
+		warehousingRouter.POST("createWarehousing", warehousingApi.CreateWarehousing)           // 新建Warehousing
+		warehousingRouter.POST("deleteWarehousing", warehousingApi.DeleteWarehousing)           // 删除Warehousing
+		warehousingRouter.POST("deleteWarehousingByIds", warehousingApi.DeleteWarehousingByIds) // 批量删除Warehousing
+		warehousingRouter.PUT("updateWarehousing", warehousingApi.UpdateWarehousing)            // 更新Warehousing
 	}
 	{
-		warehousingRouterWithoutRecord.GET("findWarehousing", warehousingApi.FindWarehousing)       // 根据ID获取Warehousing
-		warehousingRouterWithoutRecord.GET("getWarehousingList", warehousingApi.GetWarehousingList) // 获取Warehousing列表
-		warehousingRouterWithoutRecord.GET("getWarehousingName", warehousingApi.GetWarehousingName) // 获取Warehousing列表
+		warehousingRouterWithoutRecord.GET("findWarehousing", warehousingApi.FindWarehousing)          // 根据ID获取Warehousing
+		warehousingRouterWithoutRecord.GET("getWarehousingList", warehousingApi.GetWarehousingList)    // 获取Warehousing列表
+		warehousingRouterWithoutRecord.GET("getWarehousingName", warehousingApi.GetWarehousingName)    // 获取WarehousingName
+		warehousingRouterWithoutRecord.POST("getWarehousingExcel", warehousingApi.GetWarehousingExcel) // 获取WarehousingExcel
 	}
 }

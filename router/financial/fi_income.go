@@ -15,10 +15,10 @@ func (s *IncomeRouter) InitIncomeRouter(Router *gin.RouterGroup) {
 	incomeRouterWithoutRecord := Router.Group("income")
 	var incomeApi = v1.ApiGroupApp.FinancialApiGroup.IncomeApi
 	{
-		incomeRouter.POST("createIncome", incomeApi.CreateIncome)             // 新建Income
-		incomeRouter.DELETE("deleteIncome", incomeApi.DeleteIncome)           // 删除Income
-		incomeRouter.DELETE("deleteIncomeByIds", incomeApi.DeleteIncomeByIds) // 批量删除Income
-		incomeRouter.PUT("updateIncome", incomeApi.UpdateIncome)              // 更新Income
+		incomeRouter.POST("createIncome", incomeApi.CreateIncome)           // 新建Income
+		incomeRouter.POST("deleteIncome", incomeApi.DeleteIncome)           // 删除Income
+		incomeRouter.POST("deleteIncomeByIds", incomeApi.DeleteIncomeByIds) // 批量删除Income
+		incomeRouter.PUT("updateIncome", incomeApi.UpdateIncome)            // 更新Income
 	}
 	{
 		incomeRouterWithoutRecord.GET("findIncome", incomeApi.FindIncome)       // 根据ID获取Income
