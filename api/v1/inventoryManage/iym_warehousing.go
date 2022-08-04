@@ -9,6 +9,7 @@ import (
 	inventoryManageReq "github.com/tongxz/xs-admin-vue/model/inventoryManage/request"
 	"github.com/tongxz/xs-admin-vue/service"
 	"go.uber.org/zap"
+	"strings"
 )
 
 type WarehousingApi struct {
@@ -155,7 +156,24 @@ func (warehousingApi *WarehousingApi) GetWarehousingName(c *gin.Context) {
 		global.GVA_LOG.Error("查询失败!", zap.Error(err))
 		response.FailWithMessage("查询失败", c)
 	} else {
-		global.GVA_LOG.Info("查询成功!", zap.Any("warehousing", rewarehousing))
+		//global.GVA_LOG.Info("查询成功!", zap.Any("warehousing", rewarehousing))
 		response.OkWithData(gin.H{"rewarehousing": rewarehousing}, c)
 	}
+}
+func (warehousingApi *WarehousingApi) GetWarehousingExcel(c *gin.Context) {
+	var excelInfo inventoryManage.WarehousingExcel
+	_ = c.ShouldBindJSON(&excelInfo)
+	if strings.Index(excelInfo.FileName, "..") > -1 {
+		response.FailWithMessage("包含非法字符", c)
+		return
+	}
+	filePath := global.GVA_CONFIG.Excel.Dir + excelInfo.FileName
+	err := warehousingService.ParseInfoList2Excel(excelInfo.InfoList, filePath)
+	if err != nil {
+		global.GVA_LOG.Error("转换Excel失败!", zap.Error(err))
+		response.FailWithMessage("转换Excel失败", c)
+		return
+	}
+	c.Writer.Header().Add("success", "true")
+	c.File(filePath)
 }

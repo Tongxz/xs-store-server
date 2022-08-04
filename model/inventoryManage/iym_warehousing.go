@@ -43,6 +43,10 @@ type WarehousingUp struct {
 	Amount     *float64 `json:"amount" `
 	Remarks    string   `json:"remarks" `
 }
+type WarehousingExcel struct {
+	FileName string        `json:"fileName"` // 文件名
+	InfoList []Warehousing `json:"infoList"`
+}
 
 // TableName Warehousing 表名
 func (Warehousing) TableName() string {

@@ -1,10 +1,12 @@
 package inventoryManage
 
 import (
+	"fmt"
 	"github.com/tongxz/xs-admin-vue/global"
 	"github.com/tongxz/xs-admin-vue/model/common/request"
 	"github.com/tongxz/xs-admin-vue/model/inventoryManage"
 	inventoryManageReq "github.com/tongxz/xs-admin-vue/model/inventoryManage/request"
+	"github.com/xuri/excelize/v2"
 )
 
 type WarehousingService struct {
@@ -83,4 +85,30 @@ func (warehousingService *WarehousingService) GetWarehousingInfoList(info invent
 	}
 	err = db.Order("created_at desc").Limit(limit).Offset(offset).Find(&warehousings).Error
 	return warehousings, total, err
+}
+
+func (exa *WarehousingService) ParseInfoList2Excel(infoList []inventoryManage.Warehousing, filePath string) error {
+	excel := excelize.NewFile()
+	excel.SetSheetRow("Sheet1", "A1", &[]string{"ID", "物品图片", "物品名称", "所属部门", "所属分类", "收入分类", "支付方式", "物品数量", "剩余物品数量", "物品单位", "物品单价", "成本价", "总金额", "入库备注/说明"})
+	for i, Ware := range infoList {
+		axis := fmt.Sprintf("A%d", i+2)
+		excel.SetSheetRow("Sheet1", axis, &[]interface{}{
+			Ware.ID,
+			Ware.ImgUrl,
+			Ware.Name,
+			Ware.Department,
+			Ware.Type,
+			Ware.IncomeType,
+			Ware.Payment,
+			*Ware.Quantity,
+			*Ware.Margin,
+			Ware.Unit,
+			*Ware.UnitPrice,
+			*Ware.Cost,
+			*Ware.Amount,
+			Ware.Remarks,
+		})
+	}
+	err := excel.SaveAs(filePath)
+	return err
 }
