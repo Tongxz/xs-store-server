@@ -18,7 +18,11 @@ func (rechargeService *RechargeService) CreateRecharge(recharge member.Recharge)
 	err = global.GVA_DB.Transaction(func(tx *gorm.DB) error {
 		err = tx.Create(&recharge).Error
 		err = tx.Where("id = ?", recharge.MemberId).First(&old).Error
-		err = tx.Model(&old).Where("id = ?", recharge.MemberId).Updates(map[string]interface{}{"member_balance": *old.MemberBalance + *recharge.Amount}).Error
+		if *old.MemberCard {
+			err = tx.Model(&old).Where("id = ?", recharge.MemberId).Updates(map[string]interface{}{"member_balance": *old.MemberBalance + *recharge.Amount}).Error
+		} else {
+			err = tx.Model(&old).Where("id = ?", recharge.MemberId).Updates(map[string]interface{}{"member_balance": *old.MemberBalance + *recharge.Amount, "member_card": 1}).Error
+		}
 		return err
 	})
 	return err
