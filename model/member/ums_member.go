@@ -20,6 +20,14 @@ type Member struct {
 	OpenDate      *time.Time `json:"openDate" form:"openDate" gorm:"column:open_date;comment:会员卡开通时间;"`
 }
 
+type MemberName struct {
+	global.GVA_MODEL
+	Name          string   `json:"name" form:"name" gorm:"column:name;comment:会员姓名;"`
+	Mobile        *int     `json:"mobile" form:"mobile" gorm:"column:mobile;comment:会员手机号;"`
+	MemberCard    *bool    `json:"memberCard" form:"memberCard" gorm:"column:member_card;comment:是否会员;"`
+	MemberBalance *float64 `json:"memberBalance" form:"memberBalance" gorm:"column:member_balance;comment:会员卡余额;"`
+}
+
 // TableName Member 表名
 func (Member) TableName() string {
 	return "ums_member"

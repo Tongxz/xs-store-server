@@ -23,5 +23,6 @@ func (s *MemberRouter) InitMemberRouter(Router *gin.RouterGroup) {
 	{
 		memberRouterWithoutRecord.GET("findMember", memberApi.FindMember)       // 根据ID获取Member
 		memberRouterWithoutRecord.GET("getMemberList", memberApi.GetMemberList) // 获取Member列表
+		memberRouterWithoutRecord.GET("getMemberName", memberApi.GetMemberName) // 获取Member列表
 	}
 }

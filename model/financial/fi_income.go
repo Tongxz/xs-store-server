@@ -15,8 +15,11 @@ type Income struct {
 	Amount        *float64       `json:"amount" form:"amount" gorm:"column:amount;comment:金额;"`
 	Department    string         `json:"department" form:"department" gorm:"column:department;comment:部门;"`
 	Category      *int           `json:"category" form:"category" gorm:"column:category;comment:类别;"`
+	CategoryName  string         `json:"categoryName"`
 	Payment       *int           `json:"payment" form:"payment" gorm:"column:payment;comment:收款方式;"`
+	PaymentName   string         `json:"paymentName"`
 	Invoice       *bool          `json:"invoice" form:"invoice" gorm:"column:invoice;comment:是否开票;"`
+	InvoiceDesc   string         `json:"invoiceDesc"`
 	Bill          string         `json:"bill" form:"bill" gorm:"column:bill;comment:发票号;"`
 	Waiter        string         `json:"waiter" form:"waiter" gorm:"column:waiter;comment:负责人;"`
 	Note          string         `json:"note" form:"note" gorm:"column:note;comment:备注;"`
@@ -29,6 +32,10 @@ type IncomeDetail struct {
 	Sold     string   `json:"sold" gorm:"comment:售出物品;"`
 	Number   *int     `json:"number" gorm:"comment:售出数量;"`
 	Price    *float64 `json:"price" gorm:"comment:售出金额;"`
+}
+type IncomeExcel struct {
+	FileName string `json:"fileName"`
+	InfoList Income `json:"infoList"`
 }
 
 // TableName Income 表名

@@ -45,6 +45,17 @@ func (memberService *MemberService) GetMember(id uint) (member member.Member, er
 	return
 }
 
+// GetMember 根据id获取Member记录
+// Author [piexlmax](https://github.com/piexlmax)
+func (memberService *MemberService) GetMemberName() (list interface{}, err error) {
+	// 创建db
+	db := global.GVA_DB.Model(&member.Member{})
+	var membarNames []member.MemberName
+	// 如果有条件搜索 下方会自动创建搜索语句
+	err = db.Find(&membarNames).Error
+	return membarNames, err
+}
+
 // GetMemberInfoList 分页获取Member记录
 // Author [piexlmax](https://github.com/piexlmax)
 func (memberService *MemberService) GetMemberInfoList(info memberReq.MemberSearch) (list interface{}, total int64, err error) {

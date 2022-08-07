@@ -11,6 +11,7 @@ import (
 	"github.com/tongxz/xs-admin-vue/service"
 	"github.com/tongxz/xs-admin-vue/utils"
 	"go.uber.org/zap"
+	"strings"
 )
 
 type IncomeApi struct {
@@ -151,5 +152,28 @@ func (incomeApi *IncomeApi) GetIncomeList(c *gin.Context) {
 			Page:     pageInfo.Page,
 			PageSize: pageInfo.PageSize,
 		}, "获取成功", c)
+	}
+}
+
+func (incomeApi *IncomeApi) GetIncomeListExcel(c *gin.Context) {
+	var pageInfo financial.IncomeExcel
+	_ = c.ShouldBindJSON(&pageInfo)
+	if strings.Index(pageInfo.FileName, "..") > -1 {
+		response.FailWithMessage("包含非法字符", c)
+		return
+	}
+	filePath := global.GVA_CONFIG.Excel.Dir + pageInfo.FileName
+	if list, err := incomeService.GetIncomeList(pageInfo.InfoList); err != nil {
+		global.GVA_LOG.Error("获取失败!", zap.Error(err))
+		response.FailWithMessage("获取失败", c)
+	} else {
+		err := incomeService.ParseInfoList2Excel(list, filePath)
+		if err != nil {
+			global.GVA_LOG.Error("转换Excel失败!", zap.Error(err))
+			response.FailWithMessage("转换Excel失败", c)
+			return
+		}
+		c.Writer.Header().Add("success", "true")
+		c.File(filePath)
 	}
 }

@@ -21,7 +21,8 @@ func (s *IncomeRouter) InitIncomeRouter(Router *gin.RouterGroup) {
 		incomeRouter.PUT("updateIncome", incomeApi.UpdateIncome)            // 更新Income
 	}
 	{
-		incomeRouterWithoutRecord.GET("findIncome", incomeApi.FindIncome)       // 根据ID获取Income
-		incomeRouterWithoutRecord.GET("getIncomeList", incomeApi.GetIncomeList) // 获取Income列表
+		incomeRouterWithoutRecord.GET("findIncome", incomeApi.FindIncome)              // 根据ID获取Income
+		incomeRouterWithoutRecord.GET("getIncomeList", incomeApi.GetIncomeList)        // 获取Income列表
+		incomeRouterWithoutRecord.POST("getIncomeExcel", incomeApi.GetIncomeListExcel) // 获取Income列表
 	}
 }
