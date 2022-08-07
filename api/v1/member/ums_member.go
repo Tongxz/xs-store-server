@@ -140,3 +140,15 @@ func (memberApi *MemberApi) GetMemberList(c *gin.Context) {
 		}, "获取成功", c)
 	}
 }
+
+func (memberApi *MemberApi) GetMemberName(c *gin.Context) {
+	var membaer member.Member
+	_ = c.ShouldBindQuery(&membaer)
+	if remembers, err := memberService.GetMemberName(); err != nil {
+		global.GVA_LOG.Error("查询失败!", zap.Error(err))
+		response.FailWithMessage("查询失败", c)
+	} else {
+		//global.GVA_LOG.Info("查询成功!", zap.Any("warehousing", rewarehousing))
+		response.OkWithData(gin.H{"remembers": remembers}, c)
+	}
+}
