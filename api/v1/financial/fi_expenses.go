@@ -9,6 +9,7 @@ import (
 	financialReq "github.com/tongxz/xs-admin-vue/model/financial/request"
 	"github.com/tongxz/xs-admin-vue/service"
 	"go.uber.org/zap"
+	"strings"
 )
 
 type ExpensesApi struct {
@@ -151,17 +152,24 @@ func (expensesApi *ExpensesApi) GetExpensesList(c *gin.Context) {
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
 // @Router /expenses/getExpensesList [get]
 func (expensesApi *ExpensesApi) GetExpensesListExcel(c *gin.Context) {
-	var pageInfo financialReq.ExpensesSearch
-	_ = c.ShouldBindQuery(&pageInfo)
-	if list, total, err := expensesService.GetExpensesInfoList(pageInfo); err != nil {
+	var pageInfo financial.ExpensesExcel
+	_ = c.ShouldBindJSON(&pageInfo)
+	if strings.Index(pageInfo.FileName, "..") > -1 {
+		response.FailWithMessage("包含非法字符", c)
+		return
+	}
+	filePath := global.GVA_CONFIG.Excel.Dir + pageInfo.FileName
+	if list, err := expensesService.GetExpensesList(pageInfo.InfoList); err != nil {
 		global.GVA_LOG.Error("获取失败!", zap.Error(err))
 		response.FailWithMessage("获取失败", c)
 	} else {
-		response.OkWithDetailed(response.PageResult{
-			List:     list,
-			Total:    total,
-			Page:     pageInfo.Page,
-			PageSize: pageInfo.PageSize,
-		}, "获取成功", c)
+		err := expensesService.ParseInfoList2Excel(list, filePath)
+		if err != nil {
+			global.GVA_LOG.Error("转换Excel失败!", zap.Error(err))
+			response.FailWithMessage("转换Excel失败", c)
+			return
+		}
+		c.Writer.Header().Add("success", "true")
+		c.File(filePath)
 	}
 }

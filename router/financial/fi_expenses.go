@@ -21,7 +21,8 @@ func (s *ExpensesRouter) InitExpensesRouter(Router *gin.RouterGroup) {
 		expensesRouter.PUT("updateExpenses", expensesApi.UpdateExpenses)            // 更新Expenses
 	}
 	{
-		expensesRouterWithoutRecord.GET("findExpenses", expensesApi.FindExpenses)       // 根据ID获取Expenses
-		expensesRouterWithoutRecord.GET("getExpensesList", expensesApi.GetExpensesList) // 获取Expenses列表
+		expensesRouterWithoutRecord.GET("findExpenses", expensesApi.FindExpenses)              // 根据ID获取Expenses
+		expensesRouterWithoutRecord.GET("getExpensesList", expensesApi.GetExpensesList)        // 获取Expenses列表
+		expensesRouterWithoutRecord.POST("getExpensesExcel", expensesApi.GetExpensesListExcel) // 获取Expenses列表
 	}
 }

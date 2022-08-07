@@ -20,8 +20,8 @@ type Expenses struct {
 	Note       string   `json:"note" form:"note" gorm:"column:note;comment:备注说明;"`
 }
 type ExpensesExcel struct {
-	FileName string     `json:"fileName"`
-	InfoList []Expenses `json:"infoList"`
+	FileName string   `json:"fileName"`
+	InfoList Expenses `json:"infoList"`
 }
 
 // TableName Expenses 表名
