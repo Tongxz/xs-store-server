@@ -6,6 +6,7 @@ import (
 	"github.com/tongxz/xs-admin-vue/model/common/request"
 	"github.com/tongxz/xs-admin-vue/model/financial"
 	financialReq "github.com/tongxz/xs-admin-vue/model/financial/request"
+	"github.com/tongxz/xs-admin-vue/model/system"
 	"github.com/xuri/excelize/v2"
 )
 
@@ -101,6 +102,7 @@ func (expensesService *ExpensesService) GetExpensesList(info financial.Expenses)
 
 func (exa *ExpensesService) ParseInfoList2Excel(infoList []financial.Expenses, filePath string) error {
 	excel := excelize.NewFile()
+	var arry []financial.Expenses
 	//global.GVA_MODEL
 	//ExpnDate   string   `json:"expnDate" form:"expnDate" gorm:"column:expnDate;comment:收入日期;"`
 	//Content    string   `json:"content" form:"content" gorm:"column:content;comment:支出内容说明;"`
@@ -112,7 +114,36 @@ func (exa *ExpensesService) ParseInfoList2Excel(infoList []financial.Expenses, f
 	//Invoice    *bool    `json:"invoice" form:"invoice" gorm:"column:invoice;comment:是否开票;"`
 	//Note       string   `json:"note" form:"note" gorm:"column:note;comment:备注说明;"`
 	excel.SetSheetRow("Sheet1", "A1", &[]string{"ID", "收入日期", "支出说明", "支出金额", "部门", "支出类型", "支付方式", "操作人员", "是否开票", "备注说明"})
-	for i, Ware := range infoList {
+	for i, v := range infoList {
+		arry = append(arry, v)
+		sysDictionary := system.SysDictionary{}
+		myPayment := system.SysDictionary{}
+		global.GVA_DB.Where("type = ? OR id = ? and status = ?", v.Department, nil, true).Preload("SysDictionaryDetails", "status = ?", true).First(&sysDictionary)
+		global.GVA_DB.Where("type = ? OR id = ? and status = ?", "pay_by", nil, true).Preload("SysDictionaryDetails", "status = ?", true).First(&myPayment)
+		for _, dict := range sysDictionary.SysDictionaryDetails {
+			if dict.Value == *v.Type {
+				arry[i].TypeName = dict.Label
+			}
+		}
+		for _, dict := range myPayment.SysDictionaryDetails {
+			if dict.Value == *v.Payment {
+				arry[i].PaymentName = dict.Label
+			}
+		}
+		if v.Department == "food" {
+			arry[i].Department = "餐饮部"
+		} else if v.Department == "tea" {
+			arry[i].Department = "茶饮部"
+		} else {
+			arry[i].Department = "其他"
+		}
+		if *v.Invoice {
+			arry[i].InvoiceDesc = "是"
+		} else {
+			arry[i].InvoiceDesc = "否"
+		}
+	}
+	for i, Ware := range arry {
 		axis := fmt.Sprintf("A%d", i+2)
 		excel.SetSheetRow("Sheet1", axis, &[]interface{}{
 			Ware.ID,
@@ -120,10 +151,10 @@ func (exa *ExpensesService) ParseInfoList2Excel(infoList []financial.Expenses, f
 			Ware.Content,
 			*Ware.Amount,
 			Ware.Department,
-			Ware.Type,
-			Ware.Payment,
+			Ware.TypeName,
+			Ware.PaymentName,
 			Ware.Executor,
-			Ware.Invoice,
+			Ware.InvoiceDesc,
 			Ware.Note,
 		})
 	}
