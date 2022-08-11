@@ -45,7 +45,7 @@ func (warehousingService *WarehousingService) UpdateWarehousing(warehousing inve
 func (warehousingService *WarehousingService) UpdateWarehousingMargin(warehousing inventoryManage.Warehousing) (err error) {
 	var old inventoryManage.Warehousing
 	err = global.GVA_DB.Where("id = ?", warehousing.ID).First(&old).Error
-	err = global.GVA_DB.Model(&warehousing).Where("id = ?", warehousing.ID).Updates(map[string]interface{}{"margin": *old.Margin + *warehousing.Margin}).Error
+	err = global.GVA_DB.Model(&warehousing).Where("id = ?", warehousing.ID).Updates(map[string]interface{}{"margin": *old.Margin + *warehousing.Margin, "quantity": *old.Quantity + *warehousing.Margin}).Error
 	return err
 }
 
