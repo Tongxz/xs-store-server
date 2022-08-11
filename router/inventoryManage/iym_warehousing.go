@@ -15,10 +15,11 @@ func (s *WarehousingRouter) InitWarehousingRouter(Router *gin.RouterGroup) {
 	warehousingRouterWithoutRecord := Router.Group("warehousing")
 	var warehousingApi = v1.ApiGroupApp.InventorymanageApiGroup.WarehousingApi
 	{
-		warehousingRouter.POST("createWarehousing", warehousingApi.CreateWarehousing)           // 新建Warehousing
-		warehousingRouter.POST("deleteWarehousing", warehousingApi.DeleteWarehousing)           // 删除Warehousing
-		warehousingRouter.POST("deleteWarehousingByIds", warehousingApi.DeleteWarehousingByIds) // 批量删除Warehousing
-		warehousingRouter.PUT("updateWarehousing", warehousingApi.UpdateWarehousing)            // 更新Warehousing
+		warehousingRouter.POST("createWarehousing", warehousingApi.CreateWarehousing)            // 新建Warehousing
+		warehousingRouter.POST("deleteWarehousing", warehousingApi.DeleteWarehousing)            // 删除Warehousing
+		warehousingRouter.POST("deleteWarehousingByIds", warehousingApi.DeleteWarehousingByIds)  // 批量删除Warehousing
+		warehousingRouter.PUT("updateWarehousing", warehousingApi.UpdateWarehousing)             // 更新Warehousing
+		warehousingRouter.PUT("updateWarehousingMargin", warehousingApi.UpdateWarehousingMargin) // 更新Warehousing
 	}
 	{
 		warehousingRouterWithoutRecord.GET("findWarehousing", warehousingApi.FindWarehousing)          // 根据ID获取Warehousing

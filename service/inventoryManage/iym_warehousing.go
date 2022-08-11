@@ -40,6 +40,15 @@ func (warehousingService *WarehousingService) UpdateWarehousing(warehousing inve
 	return err
 }
 
+// UpdateWarehousingMargin 根据id更新WarehousingMargin记录
+// Author [piexlmax](https://github.com/piexlmax)
+func (warehousingService *WarehousingService) UpdateWarehousingMargin(warehousing inventoryManage.Warehousing) (err error) {
+	var old inventoryManage.Warehousing
+	err = global.GVA_DB.Where("id = ?", warehousing.ID).First(&old).Error
+	err = global.GVA_DB.Model(&warehousing).Where("id = ?", warehousing.ID).Updates(map[string]interface{}{"margin": *old.Margin + *warehousing.Margin}).Error
+	return err
+}
+
 // GetWarehousing 根据id获取Warehousing记录
 // Author [piexlmax](https://github.com/piexlmax)
 func (warehousingService *WarehousingService) GetWarehousing(id uint) (warehousing inventoryManage.Warehousing, err error) {
@@ -87,7 +96,7 @@ func (warehousingService *WarehousingService) GetWarehousingInfoList(info invent
 	return warehousings, total, err
 }
 
-func (exa *WarehousingService) ParseInfoList2Excel(infoList []inventoryManage.Warehousing, filePath string) error {
+func (warehousingService *WarehousingService) ParseInfoList2Excel(infoList []inventoryManage.Warehousing, filePath string) error {
 	excel := excelize.NewFile()
 	excel.SetSheetRow("Sheet1", "A1", &[]string{"ID", "物品图片", "物品名称", "所属部门", "所属分类", "收入分类", "支付方式", "物品数量", "剩余物品数量", "物品单位", "物品单价", "成本价", "总金额", "入库备注/说明"})
 	for i, Ware := range infoList {

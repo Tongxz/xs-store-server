@@ -97,6 +97,26 @@ func (warehousingApi *WarehousingApi) UpdateWarehousing(c *gin.Context) {
 	}
 }
 
+// UpdateWarehousingMargin 更新WarehousingMargin
+// @Tags Warehousing
+// @Summary 更新WarehousingMargin
+// @Security ApiKeyAuth
+// @accept application/json
+// @Produce application/json
+// @Param data body inventoryManage.Warehousing true "更新Warehousing"
+// @Success 200 {string} string "{"success":true,"data":{},"msg":"更新成功"}"
+// @Router /warehousing/updateWarehousing [put]
+func (warehousingApi *WarehousingApi) UpdateWarehousingMargin(c *gin.Context) {
+	var warehousing inventoryManage.Warehousing
+	_ = c.ShouldBindJSON(&warehousing)
+	if err := warehousingService.UpdateWarehousingMargin(warehousing); err != nil {
+		global.GVA_LOG.Error("更新失败!", zap.Error(err))
+		response.FailWithMessage("更新失败", c)
+	} else {
+		response.OkWithMessage("更新成功", c)
+	}
+}
+
 // FindWarehousing 用id查询Warehousing
 // @Tags Warehousing
 // @Summary 用id查询Warehousing
