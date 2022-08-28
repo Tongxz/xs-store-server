@@ -100,6 +100,9 @@ func (incomeService *IncomeService) GetIncomeInfoList(info financialReq.IncomeSe
 	if info.Mobile != nil {
 		db = db.Where("mobile = ?", info.Mobile)
 	}
+	if info.Name != "" {
+		db = db.Where("name LIKE ?", "%"+info.Name+"%")
+	}
 	if info.Invoice != nil {
 		db = db.Where("invoice = ?", info.Invoice)
 	}
